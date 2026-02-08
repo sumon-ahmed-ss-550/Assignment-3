@@ -50,3 +50,28 @@ function finalScore(omr) {
     return totalRight;
   }
 }
+
+// Problem-4
+function gonoVote(array) {
+  let ha = 0;
+  let na = 0;
+  if (!Array.isArray(array)) {
+    return "Invalid";
+  } else {
+    for (const item of array) {
+      if (item === "ha") {
+        ha++;
+      } else {
+        na++;
+      }
+    }
+  }
+
+  if (ha > na) {
+    return true;
+  } else if (ha === na) {
+    return "equal";
+  } else {
+    return false;
+  }
+}
