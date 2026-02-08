@@ -75,3 +75,25 @@ function gonoVote(array) {
     return false;
   }
 }
+
+// Problem-5
+function analyzeText(str) {
+  if (typeof str !== "string" || str.trim() === "") {
+    return "Invalid";
+  } else {
+    let obj = {};
+    let eachWord = str.split(" ");
+    let maxLen = eachWord[0];
+    for (let x = 1; x < eachWord.length; x++) {
+      if (maxLen.length < eachWord[x].length) {
+        maxLen = eachWord[x];
+      }
+    }
+    obj["longwords"] = maxLen;
+
+    let noSpace = eachWord.join("");
+    noSpace = noSpace.length;
+    obj["token"] = noSpace;
+    return obj;
+  }
+}
