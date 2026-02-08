@@ -26,3 +26,27 @@ function validOtp(otp) {
     return "Invalid";
   }
 }
+
+// Problem-3
+function finalScore(omr) {
+  let right = omr["right"];
+  let wrong = omr["wrong"];
+  let skip = omr["skip"];
+  const total = right + wrong + skip;
+  if (
+    typeof right !== "number" ||
+    typeof wrong !== "number" ||
+    typeof skip !== "number" ||
+    typeof total !== "number"
+  ) {
+    return "Invalid";
+  }
+  if (total !== 100) {
+    return "Invalid";
+  } else {
+    const totalDecrement = wrong * 0.5;
+    let totalRight = right - totalDecrement;
+    totalRight = Math.round(totalRight);
+    return totalRight;
+  }
+}
